@@ -64,6 +64,35 @@ void printFunc(No *inicio){
 	}
 }
 
+No* no searchByMatricula(int matricula, No *inicio){
+	No *atual = inicio;
+
+	while (atual != NULL){
+		if(atual->func.matricula == matricula){
+			return atual;
+		}
+		atual = atual->proximo;
+	}
+
+	return NULL;
+}
+
+void removeByMatricula (int matricula, No **inicio){
+	No *atual = *inicio;
+	No *anterior = NULL;
+
+	while (atual != NULL){
+		if(atual->func.matricula == matricula){
+			if(anterior == NULL){
+				inicio = atual->proximo;
+			}else{
+				anterior->proximo = atual->proximo;
+			}
+			free(atual);
+			printf("Removido com sucesso!\n");
+	}
+}
+
 int main(){
 
 	Funcionario* f1 = criarFuncionario(12345, "Graziela da Costa Ralph", 20, 15895.8691);
