@@ -66,9 +66,9 @@ void sortBySelectionDecresc(int *num, int n){
 		}
 	}
 
-	/*printVetor(num, n);
+	//printVetor(num, n);
     printf("Quantidade de comparacoes: %d\n", qtdComp);
-    printf("Quantidade de trocas: %d\n", qtdTroca);*/
+    printf("Quantidade de trocas: %d\n", qtdTroca);
 }
 
 void sortBySelection(int *num, int n){
