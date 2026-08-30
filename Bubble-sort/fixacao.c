@@ -12,8 +12,33 @@ int* criarVetor (int n){
     return vetor;
 }
 
-int* sortByBubble(){
-    
+void printVetor (int *num, int n){
+     for(int i = 0; i < n; i++){
+        printf(" %d ", num[i]);
+    } 
+    printf("\n");
+}
+
+void sortByBubble(int *num, int n){
+    int qtdComp = 0; //qtd de comparacoes
+    int qtdTrocas = 0; //quantidade de trocas
+    int aux = 0;
+
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < n; j++){
+            qtdComp++;
+            if (num[j] > num[j+1]){
+                aux = num[j];
+                num[j] = num[j+1];
+                num[j+1] = aux;
+                qtdTrocas++; //incrementa a troca
+            }
+        }
+    }
+
+    printVetor(num, n);
+    printf("Quantidade de comparacoes: %d\n", qtdComp);
+    printf("Quantidade de trocas: %d\n", qtdTrocas);
 }
 
 int main(){
@@ -22,8 +47,8 @@ int main(){
     scanf("%d", &n);
     int *vetor = criarVetor(n);
 
-    /* for(int i = 0; i < n; i++){
-        printf("[%d]: %d\n", i, vetor[i]);
-    } */
+    sortByBubble(vetor, n);
+
+    
     return 0;
 }
