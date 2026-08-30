@@ -3,14 +3,17 @@
 #include <time.h>
 
 int* criarVetor (int n){
+    srand(time(NULL)); //pra nao rolar repeticao da execucao anterior
+
     int *vetor = (int *) malloc(n * sizeof(int)); //alocacao dinamica
 
     for(int i = 0; i < n; i++){
-        vetor[i] = rand() % 1000; //atribui valores aleatorios pro vetor de 0 a 9
+        vetor[i] = rand() % 1000; //atribui valores aleatorios pro vetor de 0 a 999
     }
 
     return vetor;
 }
+
 
 void printVetor (int *num, int n){
      for(int i = 0; i < n; i++){
@@ -18,6 +21,8 @@ void printVetor (int *num, int n){
     } 
     printf("\n");
 }
+
+//-----------------------------------------------------------------------------------------------
 
 void sortByBubble(int *num, int n){
     int qtdComp = 0; //qtd de comparacoes
@@ -41,6 +46,8 @@ void sortByBubble(int *num, int n){
     printf("Quantidade de trocas: %d\n", qtdTrocas);
 }
 
+//-----------------------------------------------------------------------------------------------
+
 int main(){
     int n = 0;
     printf("Digite tamanho do vetor: ");
@@ -49,6 +56,7 @@ int main(){
 
     sortByBubble(vetor, n);
 
-    
+    free(vetor);
+
     return 0;
 }
