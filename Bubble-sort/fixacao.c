@@ -29,8 +29,8 @@ void sortByBubble(int *num, int n){
     int qtdTrocas = 0; //quantidade de trocas
     int aux = 0;
 
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
+    for (int i = 0; i < n-1; i++){
+        for (int j = 0; j < n-1-i; j++){
             qtdComp++;
             if (num[j] > num[j+1]){
                 aux = num[j];
