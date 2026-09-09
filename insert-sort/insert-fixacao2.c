@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#define TAMANHO 5000
 
 int* criarVetor (int n){
     int *vetor = (int *) malloc(n * sizeof(int)); //alocacao dinamica
@@ -12,14 +13,6 @@ int* criarVetor (int n){
     return vetor;
 }
 
-void printVetor (int *num, int n){
-     for(int i = 0; i < n; i++){
-        printf(" %d ", num[i]);
-    } 
-    printf("\n");
-}
-
-//-----------------------------------------------------------------------------------------------
 
 void sortByInsert(int *num, int n){
 	int qtdComp = 0;
@@ -42,21 +35,12 @@ void sortByInsert(int *num, int n){
     printf("Quantidade de trocas: %d\n", qtdTroca);
 }
 
-//-----------------------------------------------------------------------------------------------
-
 int main(){
 	srand(time(NULL));
+	
+	int *vetor = criarVetor(n);
 
-    int n = 0;
-    printf("Digite tamanho do vetor: ");
-    scanf("%d", &n);
-    int *vetor = criarVetor(n);
-
-    printf("\n");
-    printVetor(vetor, n);
-    printf("\n");
-
-    sortByInsert(vetor, n);
+	sortByInsert(vetor, n);
     printVetor(vetor, n);
 
     free(vetor);
