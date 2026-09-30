@@ -3,6 +3,9 @@
 #include <time.h>
 #include <limits.h>
 
+int qtdComp = 0;
+int qtdTroca = 0;
+
 int* criarVetor (int n){
     int *vetor = (int *) malloc(n * sizeof(int)); //alocacao dinamica
 
@@ -35,6 +38,13 @@ int* left(int *num, int p, int q){
 		L[i] = num[p+i];
 	}
 	L[fim] = INT_MAX;
+
+
+	/*printf("Vetor L:\n");
+	for(int i = 0; i < fim; i++){
+		printf("%d ", L[i]);
+	}
+	printf("\n");*/
 	return L;
 }
 
@@ -48,6 +58,13 @@ int* right(int *num, int q, int r){
 	}
 
 	R[fim] = INT_MAX;
+
+	/*printf("Vetor R:\n");
+	for(int i = 0; i < fim; i++){
+		printf("%d ", R[i]);
+	}
+	printf("\n");*/
+
 	return R;
 }
 
@@ -58,10 +75,12 @@ void merge(int *num, int p, int q, int r){
 	int j = 0;
 
 	for(int k = p; k <= r; k++){
-		if (L[i] <= R[j]){
+		if (L[i] <= R[j]){ /*se o item do lado esquerdo for menor que o item do lado direito,
+		entao a gente adiciona o item do lado esquerdo no vetor*/
 			num [k] = L[i];
 			i++;
 		}else{
+			//caso contrario, a gente adiciona o item do lado direito
 			num[k] = R[j];
 			j++;
 		}
@@ -73,11 +92,12 @@ void merge(int *num, int p, int q, int r){
 }
 
 void sortByMerge(int *num, int p, int r){
-	if (p < r){
+	if (p < r){ /*se a posicao inicial for menor do que a posicao final, 
+	a gente calcula a mediana e divide o vetor no meio*/
 		int q = (p+r)/2;
 		sortByMerge(num, p, q);
 		sortByMerge(num, q+1, r);
-		merge(num, p, q, r);
+		merge(num, p, q, r); //mas por que aciona o merge ?
 	}
 
 }
