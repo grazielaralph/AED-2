@@ -37,7 +37,7 @@ void troca(int *a, int *b){
 
 //-----------------------------------------------------------------------------------------------
 
-void heapFy (int *num, int n){
+void heapFy (int *num, int i){
 	int l = LEFT (i); //LEFT(i) = 2i
 	int r = RIGHT (i); //RIGHT(i) = 2i + 1
 	int m = i;
@@ -49,15 +49,15 @@ void heapFy (int *num, int n){
 		}
 	}
 
-	if(r < tamHeap(num) & num[r] > num[m]){
+	if(r < tamHeap){
 		qtdComp++;
         if(num[r] > num[m]){
         	m = r;
         } 
 	}
 
-	if(m != n){
-		troca (&num[n], &num[m]);
+	if(m != i){
+		troca (&num[i], &num[m]);
 		heapFy(num, m);
 	}
 }
@@ -93,7 +93,7 @@ int main(){
     printVetor(vetor, n);
     printf("\n");
 
-    quickSort(vetor, 0, n-1);
+    heapSort(vetor, n);
     printVetor(vetor, n);
     
     printf("\nQuantidade de Comparacoes: %d\n", qtdComp);
