@@ -10,7 +10,7 @@ int* criarVetor (int n){
     int *vetor = (int *) malloc(n * sizeof(int)); //alocacao dinamica
 
     for(int i = 0; i < n; i++){
-        vetor[i] = rand() % 11; //atribui valores aleatorios pro vetor de 0 a 10
+        vetor[i] = rand() % 1000; //atribui valores aleatorios pro vetor de 0 a 10
     }
 
     return vetor;
@@ -26,11 +26,11 @@ void printVetor (int *num, int n){
 //-----------------------------------------------------------------------------------------------
 
 int maiorValor(int *num, int n){ //encontrando o maior valor dentro do vetor
-	int maiorN = 0;
+	int maiorN = num[0];
 
 	for(int i = 0; i < n; i++){
 		if(num[i] > maiorN){
-			maiorN = num[i];
+			maiorN = num[i]; 
 		}
 	}
 
@@ -49,19 +49,18 @@ int* countingSort (int *num, int n, int k){
 		C[num[j]] = C[num[j]] + 1;
 	}
 	
-	for (int i = 1; i < k; i++){
+	for (int i = 1; i <= k; i++){
 		C[i] = C[i] + C[i-1];
 	}
 	
-	for (int j = n; j > 1; j--){
-		B[C[num[j]]] = num[j];
+	for (int j = n-1; j >= 0; j--){
+		B[C[num[j]] - 1] = num[j];
 		qtdTroca++;
-		C[num[j]] = C[num[j]] - 1;
+		C[num[j]]--;
 	}
 	
 	free(C);
 	return B;
-	free(B);
 }
 
 //-----------------------------------------------------------------------------------------------
