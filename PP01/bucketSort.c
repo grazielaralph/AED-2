@@ -28,10 +28,9 @@ void sortByInsert(int *num, int n){
 	for(int j = 1; j < n; j++){
 		chave = num[j];
 		i = j-1;
-		while(i >=0 && qtdComp++, num[i] > chave){
+		while(i >=0 && num[i] > chave){
 			num[i+1] = num[i];
 			i --;
-			qtdTroca++;
 		}
 		num[i+1] = chave;
 	}
@@ -63,7 +62,7 @@ int* bucketSort(int *num, int n, int qtdBalde){
 	int k = maiorValor(num, n) / qtdBalde;
 
 	for(int i = 0; i<n; i++){
-		indice = (num[i] / qtdBalde) + 1;
+		int indice = (num[i] / qtdBalde) + 1;
 		B[indice] = num[i];
 	}
 
