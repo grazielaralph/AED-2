@@ -21,23 +21,6 @@ void printVetor (int *num, int n){
 
 //-----------------------------------------------------------------------------------------------
 
-void sortByInsert(int *num, int n){
-	int chave = 0;
-	int i = 0;
-
-	for(int j = 1; j < n; j++){
-		chave = num[j];
-		i = j-1;
-		while(i >=0 && num[i] > chave){
-			num[i+1] = num[i];
-			i --;
-		}
-		num[i+1] = chave;
-	}
-}
-
-//-----------------------------------------------------------------------------------------------
-
 int maiorValor(int *num, int n){ //encontrando o maior valor dentro do vetor
 	int maiorN = num[0];
 
@@ -52,7 +35,49 @@ int maiorValor(int *num, int n){ //encontrando o maior valor dentro do vetor
 
 //-----------------------------------------------------------------------------------------------
 
+typedef struct Node{
+	int valor;
+	struct Node* prox;
+}
+
+Node* sortByInsert(Node* head, int valor){
+	Node* new = (Node*)malloc(sizeof(Node));
+	novo->valor = valor;
+	novo->prox = NULL;
+
+	if(head == NULL || head->valor >= valor){
+		novo->prox = head;
+		return new;
+	}
+
+	Node* atual = head;
+	while(atual->prox != NULL && atual->prox->valor < valor){
+		atual = atual->prox;
+	}
+
+	novo->prox = atual->prox;
+	atual->prox = novo;
+	return head;
+}
+
+//-----------------------------------------------------------------------------------------------
+
+void concatenar(Node** baldes, int n, float arr[]){
+	int indice = 0;
+	for(int i = 0; i < n; i++){
+		Node* atual = baldes[i];
+		while (atual != NULL){
+			arr[indice++] = atual->valor;
+			Node* temp = atual;
+			atual = atual->prox;
+			free(temp);
+		}
+	}
+}
+
+
 int* bucketSort(int *num, int n, int qtdBalde){
+	Node** buckets = (Node**)calloc(n, sizeof(Node*));
 	int *B = (int *) malloc(qtdBalde * sizeof(int));
 
 	for(int i = 0; i < qtdBalde; i++){
@@ -80,5 +105,6 @@ int* bucketSort(int *num, int n, int qtdBalde){
 //-----------------------------------------------------------------------------------------------
 
 int main(){
+
 	return 0;
 }
