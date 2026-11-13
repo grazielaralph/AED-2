@@ -1,0 +1,73 @@
+Cenario,Tamanho,Algoritmo,Comparacoes,Movimentacoes,Tempo_ms
+Ja Ordenado,1000,Selection Sort,499500,0,1.176
+Ja Ordenado,1000,Merge Sort,5044,9976,0.098
+Ja Ordenado,1000,Quick Sort,7987,4960,0.047
+Ja Ordenado,1000,Heap Sort,17583,9708,0.150
+Ja Ordenado,1000,Counting Sort,0,1000,0.017
+Ja Ordenado,1000,Bucket Sort,900,4500,0.059
+Inversamente Ordenado,1000,Selection Sort,499500,500,1.209
+Inversamente Ordenado,1000,Merge Sort,4932,9976,0.113
+Inversamente Ordenado,1000,Quick Sort,8406,5506,0.071
+Inversamente Ordenado,1000,Heap Sort,15965,8316,0.180
+Inversamente Ordenado,1000,Counting Sort,0,1000,0.016
+Inversamente Ordenado,1000,Bucket Sort,4500,0,0.054
+Aleatorio COM Repeticao,1000,Selection Sort,499500,988,1.508
+Aleatorio COM Repeticao,1000,Merge Sort,8719,9976,0.179
+Aleatorio COM Repeticao,1000,Quick Sort,10452,6730,0.123
+Aleatorio COM Repeticao,1000,Heap Sort,16858,9053,0.172
+Aleatorio COM Repeticao,1000,Counting Sort,0,1000,0.015
+Aleatorio COM Repeticao,1000,Bucket Sort,3049,2809,0.071
+Aleatorio SEM Repeticao,1000,Selection Sort,499500,994,1.202
+Aleatorio SEM Repeticao,1000,Merge Sort,8695,9976,0.152
+Aleatorio SEM Repeticao,1000,Quick Sort,10209,6077,0.113
+Aleatorio SEM Repeticao,1000,Heap Sort,16836,9078,0.194
+Aleatorio SEM Repeticao,1000,Counting Sort,0,1000,0.019
+Aleatorio SEM Repeticao,1000,Bucket Sort,2962,2247,0.105
+Ja Ordenado,10000,Selection Sort,49995000,0,117.832
+Ja Ordenado,10000,Merge Sort,69008,133616,1.148
+Ja Ordenado,10000,Quick Sort,113631,66421,0.578
+Ja Ordenado,10000,Heap Sort,244460,131956,2.257
+Ja Ordenado,10000,Counting Sort,0,10000,0.160
+Ja Ordenado,10000,Bucket Sort,9900,495000,1.534
+Inversamente Ordenado,10000,Selection Sort,49995000,5000,132.651
+Inversamente Ordenado,10000,Merge Sort,64608,133616,1.210
+Inversamente Ordenado,10000,Quick Sort,117534,72675,0.660
+Inversamente Ordenado,10000,Heap Sort,226682,116696,2.128
+Inversamente Ordenado,10000,Counting Sort,0,10000,0.157
+Inversamente Ordenado,10000,Bucket Sort,495000,0,1.804
+Aleatorio COM Repeticao,10000,Selection Sort,49995000,9980,128.197
+Aleatorio COM Repeticao,10000,Merge Sort,120453,133616,2.003
+Aleatorio COM Repeticao,10000,Quick Sort,177588,126017,1.592
+Aleatorio COM Repeticao,10000,Heap Sort,235214,124099,2.738
+Aleatorio COM Repeticao,10000,Counting Sort,0,10000,0.167
+Aleatorio COM Repeticao,10000,Bucket Sort,236780,272799,2.106
+Aleatorio SEM Repeticao,10000,Selection Sort,49995000,9989,132.060
+Aleatorio SEM Repeticao,10000,Merge Sort,120402,133616,2.114
+Aleatorio SEM Repeticao,10000,Quick Sort,149310,92769,1.614
+Aleatorio SEM Repeticao,10000,Heap Sort,235073,124041,2.787
+Aleatorio SEM Repeticao,10000,Counting Sort,0,10000,0.196
+Aleatorio SEM Repeticao,10000,Bucket Sort,256974,247494,2.203
+Ja Ordenado,100000,Selection Sort,4999950000,0,14316.913
+Ja Ordenado,100000,Merge Sort,853904,1668928,15.506
+Ja Ordenado,100000,Quick Sort,1468946,846100,8.157
+Ja Ordenado,100000,Heap Sort,3112517,1650854,28.765
+Ja Ordenado,100000,Counting Sort,0,100000,2.288
+Ja Ordenado,100000,Bucket Sort,99900,49950000,101.929
+Inversamente Ordenado,100000,Selection Sort,4999950000,50000,15789.350
+Inversamente Ordenado,100000,Merge Sort,815024,1668928,18.106
+Inversamente Ordenado,100000,Quick Sort,1513481,899854,10.602
+Inversamente Ordenado,100000,Heap Sort,2926640,1497434,33.518
+Inversamente Ordenado,100000,Counting Sort,0,100000,2.010
+Inversamente Ordenado,100000,Bucket Sort,49950000,0,168.725
+Aleatorio COM Repeticao,100000,Selection Sort,4999950000,99882,14832.361
+Aleatorio COM Repeticao,100000,Merge Sort,1536076,1668928,29.171
+Aleatorio COM Repeticao,100000,Quick Sort,6207051,5765725,74.249
+Aleatorio COM Repeticao,100000,Heap Sort,3018298,1573516,45.643
+Aleatorio COM Repeticao,100000,Counting Sort,0,100000,1.985
+Aleatorio COM Repeticao,100000,Bucket Sort,22479721,27615624,353.851
+Aleatorio SEM Repeticao,100000,Selection Sort,4999950000,99990,13572.957
+Aleatorio SEM Repeticao,100000,Merge Sort,1536305,1668928,27.664
+Aleatorio SEM Repeticao,100000,Quick Sort,2133769,1196531,20.961
+Aleatorio SEM Repeticao,100000,Heap Sort,3019824,1575428,36.037
+Aleatorio SEM Repeticao,100000,Counting Sort,0,100000,2.239
+Aleatorio SEM Repeticao,100000,Bucket Sort,25033971,25015309,328.602

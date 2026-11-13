@@ -1,3 +1,29 @@
+#include "algoritmos.h"
+
+void sortbySelection(int *num, int n, Metricas *m) {
+    int min = 0;
+    int aux = 0;
+
+    for (int i = 0; i < n - 1; i++) {
+        min = i;
+
+        for (int j = i + 1; j < n; j++) {
+            m->qtdComp++;
+            if (num[j] < num[min]) {
+                min = j;
+            }
+        }
+
+        if (min != i) {
+            aux = num[i];
+            num[i] = num[min];
+            num[min] = aux;
+            m->qtdTroca++;
+        }
+    }
+}
+
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -66,3 +92,5 @@ int main(){
 	
 	return 0;
 }
+*/
+
